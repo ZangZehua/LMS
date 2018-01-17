@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="788.0" prefWidth="1266.0" style=" -fx-background-color: #AAAAAA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LMS.controller.ReaderController">
+   <children>
+       <Label fx:id="welcome" layoutX="88.0" layoutY="123.0" />
+       <Label layoutX="127.0" layoutY="123.0" text="欢迎您！" />
+       <Label layoutX="75.0" layoutY="59.0" text="图书管理系统-读者">
+           <font>
+               <Font size="30.0" />
+           </font>
+       </Label>
+       <Label layoutX="1076.0" layoutY="88.0" text="作者：臧泽华 MichaelZ" />
+       <Label layoutX="1100.0" layoutY="138.0" text="欠款" />
+       <Label fx:id="arrears" layoutX="1146.0" layoutY="138.0" />
+       <Label fx:id="output_be_sit" layoutX="328.0" layoutY="123.0" />
+       <Button fx:id="exit" layoutX="188.0" layoutY="118.0" mnemonicParsing="false" onAction="#setExit" style="-fx-background-color: #B0B0B0;" text="退出登录" />
+      <TabPane layoutX="-1.0" layoutY="174.0" prefHeight="614.0" prefWidth="1266.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="查找图书">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="693.0">
+                        <children>
+                            <TableView fx:id="tableView1" layoutY="28.0" prefHeight="547.0" prefWidth="1266.0">
+                                <columns>
+                                    <TableColumn fx:id="c1_1" prefWidth="100.0" text="图书编号" />
+                                    <TableColumn fx:id="c1_2" prefWidth="150.0" text="书名" />
+                                    <TableColumn fx:id="c1_3" prefWidth="150.0" text="作者" />
+                                    <TableColumn fx:id="c1_4" prefWidth="150.0" text="出版社" />
+                                    <TableColumn fx:id="c1_5" prefWidth="100.0" text="类别" />
+                                    <TableColumn fx:id="c1_6" prefWidth="100.0" text="单价" />
+                                    <TableColumn fx:id="c1_7" prefWidth="150.0" text="入库日期" />
+                                    <TableColumn fx:id="c1_8" prefWidth="75.0" text="入库数量" />
+                                    <TableColumn fx:id="c1_9" prefWidth="75.0" text="借出数量" />
+                                    <TableColumn fx:id="c1_10" prefWidth="75.0" text="遗失数量" />
+                                    <TableColumn fx:id="c1_11" prefWidth="75.0" text="库存" />
+                                </columns>
+                            </TableView>
+                            <Button fx:id="findAbook1" blendMode="COLOR_BURN" layoutX="399.0" layoutY="-1.0" mnemonicParsing="false" onAction="#findAbook" prefHeight="30.0" prefWidth="70.0" text="查找" />
+                            <TextField fx:id="bookid1" layoutY="-1.0" prefHeight="30.0" prefWidth="103.0" promptText="图书编号" />
+                            <TextField fx:id="bookname1" layoutX="103.0" layoutY="-1.0" prefHeight="30.0" prefWidth="148.0" promptText="书名" />
+                            <TextField fx:id="author1" layoutX="251.0" layoutY="-1.0" prefHeight="30.0" prefWidth="148.0" promptText="作者" />
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+          <Tab text="已借图书">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                      <children>
+                          <TableView fx:id="tableView2" layoutY="28.0" prefHeight="547.0" prefWidth="898.0">
+                              <columns>
+                                  <TableColumn fx:id="c2_1" prefWidth="100.0" text="图书编号" />
+                                  <TableColumn fx:id="c2_2" prefWidth="100.0" text="借阅日期" />
+                                  <TableColumn fx:id="c2_3" prefWidth="150.0" text="应还日期" />
+                                  <TableColumn fx:id="c2_4" prefWidth="150.0" text="是否遗失" />
+                              </columns>
+                          </TableView>
+                        <Label layoutX="950.0" layoutY="103.0" text="图书编号" />
+                        <Label fx:id="output_bookid2" layoutX="1049.0" layoutY="103.0" />
+                        <Button layoutX="946.0" layoutY="172.0" mnemonicParsing="false" onAction="#bookLostReport" text="丢失上报" />
+                        <TextField fx:id="input_bookid2" layoutY="-1.0" promptText="图书编号" />
+                        <Button layoutX="202.0" layoutY="-1.0" mnemonicParsing="false" onAction="#findbooksborrowed" text="查找" />
+                        <Label fx:id="output_sit2" layoutX="1049.0" layoutY="177.0" />
+                      </children></AnchorPane>
+              </content>
+          </Tab>
+            <Tab text="已过期图书">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <TableView fx:id="tableView3" prefHeight="575.0" prefWidth="1266.0">
+                           <columns>
+                              <TableColumn fx:id="c3_1" prefWidth="100.0" text="图书编号" />
+                              <TableColumn fx:id="c3_2" prefWidth="100.0" text="借阅日期" />
+                              <TableColumn fx:id="c3_3" prefWidth="150.0" text="应还日期" />
+                           </columns>
+                        </TableView>
+                        <Label fx:id="output_bookid21" layoutX="1049.0" layoutY="103.0" />
+                        <Label fx:id="output_sit21" layoutX="1049.0" layoutY="177.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="读者证挂失">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="119.0" layoutY="94.0" text="请注意操作，读者证一旦挂失，只能前往管理员处取消挂失" textFill="RED">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="119.0" layoutY="165.0" text="并且不能借书!" textFill="RED">
+                           <font>
+                              <Font size="40.0" />
+                           </font></Label>
+                        <Button fx:id="Loss_reporting4" layoutX="119.0" layoutY="251.0" mnemonicParsing="false" onAction="#LossReporting" prefHeight="54.0" prefWidth="117.0" style="-fx-background-color: #EE0000;" text="读者证挂失" textFill="WHITE" />
+                        <Label fx:id="output_sit5" layoutX="296.0" layoutY="278.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="修改密码">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                        <children>
+                            <Button fx:id="changePW" layoutX="737.0" layoutY="47.0" mnemonicParsing="false" onAction="#changePW" text="修改密码" />
+                            <Label fx:id="loldPW" layoutX="737.0" layoutY="105.0" text="旧密码" />
+                            <TextField fx:id="oldPW" layoutX="852.0" layoutY="100.0" />
+                            <Label fx:id="lnewPW" layoutX="737.0" layoutY="159.0" text="新密码" />
+                            <TextField fx:id="newPW" layoutX="852.0" layoutY="154.0" />
+                            <Label fx:id="lnewPWC" layoutX="737.0" layoutY="213.0" text="新密码确认" />
+                            <TextField fx:id="newPWC" layoutX="852.0" layoutY="208.0" />
+                            <Label fx:id="changePWsit" layoutX="862.0" layoutY="52.0" />
+                        </children></AnchorPane>
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+       <Button fx:id="refresh" layoutX="1026.0" layoutY="133.0" mnemonicParsing="false" onAction="#refresh" text="刷新" />
+   </children>
+</AnchorPane>

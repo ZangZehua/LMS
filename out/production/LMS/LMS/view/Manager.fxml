@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="788.0" prefWidth="1266.0" style="-fx-background-color: #AAAAAA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LMS.controller.ManagerController">
+    <children>
+        <Label fx:id="welcome" layoutX="88.0" layoutY="123.0" />
+        <Label layoutX="127.0" layoutY="123.0" text="欢迎您！" />
+        <Label layoutX="75.0" layoutY="59.0" text="图书管理系统-管理员">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+        <Label layoutX="1080.0" layoutY="88.0" text="作者：臧泽华 MichaelZ" />
+      <Button fx:id="exit" layoutX="188.0" layoutY="118.0" mnemonicParsing="false" onAction="#setExit" style="-fx-background-color: #B0B0B0;" text="退出登录" />
+      <TabPane layoutX="-1.0" layoutY="174.0" prefHeight="614.0" prefWidth="1266.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="查找图书">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="693.0">
+                     <children>
+                        <TableView fx:id="tableView5" layoutY="28.0" prefHeight="547.0" prefWidth="1266.0">
+                           <columns>
+                              <TableColumn fx:id="c51" prefWidth="100.0" text="图书编号" />
+                              <TableColumn fx:id="c52" prefWidth="150.0" text="书名" />
+                              <TableColumn fx:id="c53" prefWidth="150.0" text="作者" />
+                              <TableColumn fx:id="c54" prefWidth="150.0" text="出版社" />
+                              <TableColumn fx:id="c55" prefWidth="100.0" text="类别" />
+                              <TableColumn fx:id="c56" prefWidth="100.0" text="单价" />
+                              <TableColumn fx:id="c57" prefWidth="150.0" text="入库日期" />
+                              <TableColumn fx:id="c58" prefWidth="75.0" text="入库数量" />
+                              <TableColumn fx:id="c59" prefWidth="75.0" text="借出数量" />
+                              <TableColumn fx:id="c510" prefWidth="75.0" text="遗失数量" />
+                              <TableColumn fx:id="c511" prefWidth="75.0" text="库存" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="findAbook" blendMode="COLOR_BURN" layoutX="399.0" layoutY="-1.0" mnemonicParsing="false" onAction="#findAbook" prefHeight="30.0" prefWidth="70.0" text="查找" />
+                        <TextField fx:id="bookid5" layoutY="-1.0" prefHeight="30.0" prefWidth="103.0" promptText="图书编号" />
+                        <TextField fx:id="bookname5" layoutX="103.0" layoutY="-1.0" prefHeight="30.0" prefWidth="148.0" promptText="书名" />
+                        <TextField fx:id="author5" layoutX="251.0" layoutY="-1.0" prefHeight="30.0" prefWidth="148.0" promptText="作者" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="已借图书">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <TableView fx:id="tableView2" prefHeight="575.0" prefWidth="1266.0">
+                          <columns>
+                            <TableColumn fx:id="c21" prefWidth="100.0" text="读者证编号" />
+                            <TableColumn fx:id="c22" prefWidth="100.0" text="图书编号" />
+                              <TableColumn fx:id="c23" prefWidth="150.0" text="借阅日期" />
+                              <TableColumn fx:id="c24" prefWidth="150.0" text="应还日期" />
+                              <TableColumn fx:id="c25" prefWidth="100.0" text="是否遗失" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="已丢失图书">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <TableView fx:id="tableView3" prefHeight="575.0" prefWidth="1266.0">
+                          <columns>
+                              <TableColumn fx:id="c31" prefWidth="178.0" text="读者证编号" />
+                              <TableColumn fx:id="c32" prefWidth="150.0" text="图书编号" />
+                              <TableColumn fx:id="c33" prefWidth="178.0" text="丢失日期" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="已过期图书">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <TableView fx:id="tableView21" prefHeight="575.0" prefWidth="1210.0">
+                           <columns>
+                              <TableColumn fx:id="c211" prefWidth="100.0" text="读者证编号" />
+                              <TableColumn fx:id="c221" prefWidth="100.0" text="图书编号" />
+                              <TableColumn fx:id="c231" prefWidth="150.0" text="借阅日期" />
+                              <TableColumn fx:id="c241" prefWidth="150.0" text="应还日期" />
+                              <TableColumn fx:id="c251" prefWidth="100.0" text="是否遗失" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="读者证挂失记录">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <TableView fx:id="tableView4" layoutY="34.0" prefHeight="543.0" prefWidth="545.0">
+                          <columns>
+                            <TableColumn fx:id="c41" prefWidth="150.0" text="读者证编号" />
+                            <TableColumn fx:id="c42" prefWidth="150.0" text="挂失时间" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="input_readerid4" layoutY="4.0" promptText="读者证编号" />
+                        <Button fx:id="findLoss4" layoutX="202.0" layoutY="4.0" mnemonicParsing="false" onAction="#findLoss" text="查询" />
+                        <Label layoutX="670.0" layoutY="95.0" text="读者证编号" />
+                        <Label fx:id="output_readerid4" layoutX="814.0" layoutY="95.0" />
+                        <Label layoutX="670.0" layoutY="167.0" text="挂失时间" />
+                        <Label fx:id="output_lossdate4" layoutX="814.0" layoutY="167.0" />
+                        <Button fx:id="cancelReport4" layoutX="1172.0" layoutY="34.0" mnemonicParsing="false" onAction="#cancelReport" text="取消挂失" />
+                        <Label fx:id="output_sit4" layoutX="670.0" layoutY="39.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="借书">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="693.0">
+                     <children>
+
+                        <TextField fx:id="bookname7" layoutX="202.0" layoutY="-1.0" promptText="书名" AnchorPane.bottomAnchor="546.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="862.0" AnchorPane.topAnchor="-1.0" />
+                        <TextField fx:id="author7" layoutX="404.0" layoutY="-1.0" promptText="作者" AnchorPane.bottomAnchor="546.0" AnchorPane.leftAnchor="404.0" AnchorPane.rightAnchor="660.0" AnchorPane.topAnchor="-1.0" />
+                         <TableView fx:id="tableView7" layoutY="28.0" prefHeight="547.0" prefWidth="757.0">
+                             <columns>
+                                 <TableColumn fx:id="c71" prefWidth="100.0" text="图书编号" />
+                                 <TableColumn fx:id="c72" prefWidth="150.0" text="书名" />
+                                 <TableColumn fx:id="c73" prefWidth="150.0" text="作者" />
+                                 <TableColumn fx:id="c74" prefWidth="150.0" text="出版社" />
+                                 <TableColumn fx:id="c75" prefWidth="100.0" text="类别" />
+                                 <TableColumn fx:id="c76" prefWidth="100.0" text="单价" />
+                                 <TableColumn fx:id="c77" prefWidth="150.0" text="入库日期" />
+                                 <TableColumn fx:id="c78" prefWidth="75.0" text="库存" />
+                             </columns>
+                         </TableView>
+                        <Label layoutX="835.0" layoutY="166.0" text="图书编号" />
+                        <Button fx:id="findabook7" blendMode="COLOR_BURN" layoutX="606.0" layoutY="-1.0" mnemonicParsing="false" onAction="#findAbook_tb" text="查找" AnchorPane.bottomAnchor="546.0" AnchorPane.leftAnchor="606.0" AnchorPane.rightAnchor="610.0" AnchorPane.topAnchor="-1.0" />
+                        <Label fx:id="output_bookid7" layoutX="927.0" layoutY="168.0" />
+                        <Label layoutX="835.0" layoutY="213.0" text="书名" />
+                        <Label fx:id="output_bookname7" layoutX="927.0" layoutY="215.0" />
+                        <Label layoutX="835.0" layoutY="266.0" text="作者" />
+                        <Label fx:id="output_author7" layoutX="927.0" layoutY="269.0" />
+                        <Label layoutX="835.0" layoutY="318.0" text="类别" />
+                        <Label fx:id="output_category7" layoutX="927.0" layoutY="319.0" />
+                        <Label fx:id="output_stock7" layoutX="927.0" layoutY="371.0" />
+                        <Label layoutX="835.0" layoutY="371.0" text="库存" />
+                        <Button fx:id="borrow_confirm7" layoutX="1172.0" layoutY="28.0" mnemonicParsing="false" onAction="#borrow" text="确定借阅" />
+                        <Label fx:id="output_sit7" layoutX="850.0" layoutY="43.0" />
+                        <Label layoutX="835.0" layoutY="85.0" text="读者证编号：" />
+                        <TextField fx:id="input_readerid7" layoutX="927.0" layoutY="80.0" />
+                        <Label layoutX="831.0" layoutY="416.0" text="借阅日期" />
+                        <Label fx:id="date_out7" layoutX="906.0" layoutY="416.0" />
+                        <Label layoutX="831.0" layoutY="460.0" text="应还日期" />
+                        <Label fx:id="date_in7" layoutX="908.0" layoutY="460.0" />
+                        <TextField fx:id="bookid7" layoutY="-1.0" promptText="图书编号" AnchorPane.bottomAnchor="546.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1064.0" AnchorPane.topAnchor="-1.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="还书">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="693.0">
+                     <children>
+                        <TableView fx:id="tableView8" layoutY="29.0" prefHeight="546.0" prefWidth="672.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="29.0">
+                          <columns>
+                            <TableColumn fx:id="c81" prefWidth="150.0" text="读者证编号" />
+                            <TableColumn fx:id="c82" prefWidth="150.0" text="图书编号" />
+                              <TableColumn fx:id="c83" prefWidth="130.0" text="借阅日期" />
+                              <TableColumn fx:id="c84" prefWidth="130.0" text="应还日期" />
+                              <TableColumn fx:id="c85" text="是否遗失" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="input_readerid8" layoutY="-1.0" promptText="读者证编号" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1064.0" AnchorPane.topAnchor="-1.0" />
+                        <TextField fx:id="input_bookid8" layoutX="202.0" layoutY="-1.0" promptText="图书编号" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="862.0" AnchorPane.topAnchor="-1.0" />
+                        <Button fx:id="findBorrow8" blendMode="COLOR_BURN" layoutX="404.0" layoutY="-1.0" mnemonicParsing="false" onAction="#findBorrow" text="查询" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="404.0" AnchorPane.rightAnchor="812.0" AnchorPane.topAnchor="-1.0" />
+                        <Label fx:id="output_sit8" layoutX="818.0" layoutY="73.0" />
+                        <Label layoutX="800.0" layoutY="127.0" text="读者证编号" />
+                        <Label fx:id="output_readerid8" layoutX="895.0" layoutY="127.0" />
+                        <Label layoutX="799.0" layoutY="196.0" text="图书编号" />
+                        <Label fx:id="output_bookid8" layoutX="895.0" layoutY="196.0" />
+                        <Label layoutX="799.0" layoutY="265.0" text="借阅日期" />
+                        <Label fx:id="output_date_out8" layoutX="895.0" layoutY="265.0" />
+                        <Label layoutX="799.0" layoutY="322.0" text="应还日期" />
+                        <Label fx:id="output_date_in8" layoutX="895.0" layoutY="322.0" />
+                        <Button fx:id="return_confirm8" layoutX="1172.0" layoutY="29.0" mnemonicParsing="false" onAction="#returnbook" text="确认归还" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="办理借阅证">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <Label layoutX="91.0" layoutY="66.0" text="读者证编号" />
+                        <Label fx:id="output_readerid9" layoutX="184.0" layoutY="66.0" />
+                        <Label layoutX="91.0" layoutY="120.0" text="姓名" />
+                        <TextField fx:id="input_readername9" layoutX="184.0" layoutY="115.0" />
+                        <Label layoutX="91.0" layoutY="177.0" text="性别" />
+                        <MenuButton fx:id="input_sex9" layoutX="184.0" layoutY="172.0" mnemonicParsing="false" text="性别">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#male" text="男" />
+                            <MenuItem mnemonicParsing="false" onAction="#female" text="女" />
+                          </items>
+                        </MenuButton>
+                        <Label layoutX="91.0" layoutY="236.0" text="出生日期" />
+                        <Label layoutX="91.0" layoutY="288.0" text="联系电话" />
+                        <TextField fx:id="input_contect9" layoutX="184.0" layoutY="283.0" />
+                        <Label layoutX="91.0" layoutY="334.0" text="手机" />
+                        <TextField fx:id="input_phone9" layoutX="184.0" layoutY="329.0" />
+                        <Label layoutX="633.0" layoutY="169.0" text="证件名称" />
+                        <Label layoutX="633.0" layoutY="223.0" text="证件号码" />
+                        <MenuButton fx:id="input_cardtype9" layoutX="745.0" layoutY="164.0" mnemonicParsing="false" text="一卡通">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#eCard" text="一卡通" />
+                          </items>
+                        </MenuButton>
+                        <TextField fx:id="input_cardID9" layoutX="745.0" layoutY="218.0" />
+                        <Label layoutX="633.0" layoutY="280.0" text="会员级别" />
+                        <Label fx:id="output_level" layoutX="745.0" layoutY="280.0" text="1" />
+                        <Label layoutX="633.0" layoutY="339.0" text="办证日期" />
+                        <Label fx:id="output_date9" layoutX="745.0" layoutY="339.0" />
+                        <Button fx:id="newCardConfirm9" layoutX="510.0" layoutY="426.0" mnemonicParsing="false" onAction="#newCard" prefHeight="39.0" prefWidth="74.0" text="办理" />
+                        <Label fx:id="output_sit9" layoutX="609.0" layoutY="441.0" />
+                        <TextField fx:id="input_birthday9" layoutX="184.0" layoutY="231.0" />
+                        <PasswordField fx:id="input_pw9" layoutX="745.0" layoutY="61.0" />
+                        <PasswordField fx:id="input_pwc9" layoutX="745.0" layoutY="115.0" />
+                        <Label layoutX="633.0" layoutY="66.0" text="密码" />
+                        <Label layoutX="633.0" layoutY="120.0" text="确认密码" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="图书入库">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <Label layoutX="60.0" layoutY="68.0" text="图书编号">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="60.0" layoutY="136.0" text="书名">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="60.0" layoutY="200.0" text="作者">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="60.0" layoutY="261.0" text="出版社">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="60.0" layoutY="325.0" text="类别">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="565.0" layoutY="200.0" text="单价">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="565.0" layoutY="136.0" text="入库数量">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="565.0" layoutY="68.0" text="入库日期">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="input_bookid6" layoutX="158.0" layoutY="67.0" promptText="Book_ID" />
+                        <TextField fx:id="input_bookname6" layoutX="158.0" layoutY="135.0" promptText="Book_Name" />
+                        <TextField fx:id="input_author6" layoutX="158.0" layoutY="199.0" promptText="Author" />
+                        <TextField fx:id="input_publishing6" layoutX="158.0" layoutY="260.0" promptText="Publishing" />
+                        <TextField fx:id="input_price6" layoutX="671.0" layoutY="199.0" promptText="0.00" />
+                        <Label fx:id="datein_6" layoutX="671.0" layoutY="72.0" />
+                        <TextField fx:id="input_numin6" layoutX="671.0" layoutY="135.0" promptText="0" />
+                        <MenuButton fx:id="choseCate6" layoutX="158.0" layoutY="325.0" mnemonicParsing="false" text="Category">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#setC61" text="计算机技术" />
+                            <MenuItem mnemonicParsing="false" onAction="#setC62" text="自然科学" />
+                              <MenuItem mnemonicParsing="false" onAction="#setC63" text="医学" />
+                              <MenuItem mnemonicParsing="false" onAction="#setC64" text="农林" />
+                              <MenuItem mnemonicParsing="false" onAction="#setC65" text="建筑" />
+                              <MenuItem mnemonicParsing="false" onAction="#setC66" text="建筑" />
+                              <MenuItem mnemonicParsing="false" onAction="#setC67" text="通信" />
+                              <MenuItem mnemonicParsing="false" onAction="#setC68" text="化学" />
+                              <MenuItem mnemonicParsing="false" onAction="#setC69" text="物理" />
+                              <MenuItem mnemonicParsing="false" onAction="#setC610" text="美文" />
+                          </items>
+                        </MenuButton>
+                        <Button fx:id="confirm6" layoutX="793.0" layoutY="324.0" mnemonicParsing="false" onAction="#newBook" text="图书入库" />
+                        <Label fx:id="sit6" layoutX="566.0" layoutY="290.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="个人信息">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <Button fx:id="changePW" layoutX="737.0" layoutY="47.0" mnemonicParsing="false" onAction="#changePW" text="修改密码" />
+                        <Label fx:id="loldPW" layoutX="737.0" layoutY="105.0" text="旧密码" />
+                        <TextField fx:id="oldPW" layoutX="852.0" layoutY="100.0" />
+                        <Label fx:id="lnewPW" layoutX="737.0" layoutY="159.0" text="新密码" />
+                        <TextField fx:id="newPW" layoutX="852.0" layoutY="154.0" />
+                        <Label fx:id="lnewPWC" layoutX="737.0" layoutY="213.0" text="新密码确认" />
+                        <TextField fx:id="newPWC" layoutX="852.0" layoutY="208.0" />
+                        <Label fx:id="changePWsit" layoutX="862.0" layoutY="52.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="查看读者信息">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <TableView fx:id="tableView10" layoutY="29.0" prefHeight="546.0" prefWidth="1266.0">
+                          <columns>
+                            <TableColumn fx:id="c10_1" prefWidth="150.0" text="读者证编号" />
+                            <TableColumn fx:id="c10_2" prefWidth="100.0" text="读者姓名" />
+                              <TableColumn fx:id="c10_3" prefWidth="75.0" text="性别" />
+                              <TableColumn fx:id="c10_4" prefWidth="100.0" text="出生日期" />
+                              <TableColumn fx:id="c10_5" prefWidth="130.0" text="联系方式" />
+                              <TableColumn fx:id="c10_6" prefWidth="130.0" text="手机" />
+                              <TableColumn fx:id="c10_7" prefWidth="75.0" text="证件类型" />
+                              <TableColumn fx:id="c10_8" prefWidth="150.0" text="证件编号" />
+                              <TableColumn fx:id="c10_9" prefWidth="75.0" text="会员级别" />
+                              <TableColumn fx:id="c10_10" prefWidth="100.0" text="办证日期" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="input_readerid10" layoutY="-1.0" promptText="读者证编号" />
+                        <TextField fx:id="input_readername10" layoutX="202.0" layoutY="-1.0" promptText="读者姓名" />
+                        <Button fx:id="findareader10" layoutX="404.0" layoutY="-1.0" mnemonicParsing="false" onAction="#findAreader" text="查询" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="查看统计信息">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="259.0">
+                     <children>
+                        <PieChart fx:id="pieChart" layoutX="503.0" prefHeight="576.0" prefWidth="763.0" />
+                        <Label fx:id="pc_cate" layoutX="550.0" layoutY="15.0" />
+                        <Label fx:id="pc_number" layoutX="550.0" layoutY="45.0" />
+                        <Label fx:id="pc_rate" layoutX="550.0" layoutY="75.0" />
+                        <MenuButton layoutX="101.0" layoutY="60.0" mnemonicParsing="false" text="查看图书库存统计">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#pc_choose1" text="查看图书库存统计" />
+                            <MenuItem mnemonicParsing="false" onAction="#pc_choose2" text="查看已借图书统计" />
+                              <MenuItem mnemonicParsing="false" onAction="#pc_choose3" text="查看读者性别比例" />
+                          </items>
+                        </MenuButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="refresh" layoutX="1190.0" layoutY="143.0" mnemonicParsing="false" onAction="#refresh" text="刷新" />
+    </children>
+</AnchorPane>
