@@ -1,2 +1,5 @@
 # LMS
-北京交通大学数据库2015级大作业-图书管理系统
+The final project of Database course. BJTU CIT 2015.
+Idea project.
+
+
